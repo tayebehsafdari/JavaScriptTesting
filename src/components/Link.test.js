@@ -1,23 +1,31 @@
-// Test Renderer
+// Test Renderer (Snapshot Testing)
 
 import React from "react";
-import TestRenderer from 'react-test-renderer';
+import {create, act} from 'react-test-renderer';
 import Link from "./Link";
 
 test('Link changes the class when hovered', () => {
-    const testRenderer = TestRenderer.create(
-        <Link page="http://www.facebook.com">Facebook</Link>
-    );
+    let testRenderer;
+    act(() => {
+        testRenderer = create(
+            <Link page="http://www.facebook.com">Facebook</Link>
+        );
+    });
+
     let tree = testRenderer.toJSON();
 
     expect(tree).toMatchSnapshot();
 
-    tree.props.onMouseEnter();
+    act(() => {
+        tree.props.onMouseEnter();
+    });
 
     tree = testRenderer.toJSON();
     expect(tree).toMatchSnapshot();
 
-    tree.props.onMouseLeave();
+    act(() => {
+        tree.props.onMouseLeave();
+    });
 
     tree = testRenderer.toJSON();
     expect(tree).toMatchSnapshot();

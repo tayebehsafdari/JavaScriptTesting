@@ -1,5 +1,3 @@
-// react-testing-library
-
 import React, {useState} from "react";
 
 const CheckboxWithLabelRTL = ({labelOn, labelOff}) => {

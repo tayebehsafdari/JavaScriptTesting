@@ -1,5 +1,3 @@
-// Enzyme
-
 import React, {useState} from "react";
 
 const CheckboxWithLabelEnzyme = ({labelOn, labelOff}) => {
