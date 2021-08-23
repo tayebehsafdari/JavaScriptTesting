@@ -1,15 +1,16 @@
 import './App.scss';
-
-import {Container, Form} from 'react-bootstrap';
-import Counter from "./Counter";
+import {Container} from 'react-bootstrap';
+import Link from "./Link";
+import CheckboxWithLabel from "./CheckboxWithLabel";
 
 function App() {
     return (
-        <div className="App">
+        <div className="App my-5">
             <Container>
-                <Form>
-                    <Counter initialCount={0}/>
-                </Form>
+                <Link page="http://www.facebook.com">Facebook</Link>
+                <br/>
+                <br/>
+                <CheckboxWithLabel labelOn="On" labelOff="Off"/>
             </Container>
         </div>
     );
