@@ -1,7 +1,8 @@
 import './App.scss';
 import {Container} from 'react-bootstrap';
 import Link from "./Link";
-import CheckboxWithLabel from "./CheckboxWithLabel";
+import CheckboxWithLabelRTL from "./CheckboxWithLabelRTL";
+import CheckboxWithLabelEnzyme from "./CheckboxWithLabelEnzyme";
 
 function App() {
     return (
@@ -10,7 +11,10 @@ function App() {
                 <Link page="http://www.facebook.com">Facebook</Link>
                 <br/>
                 <br/>
-                <CheckboxWithLabel labelOn="On" labelOff="Off"/>
+                <CheckboxWithLabelRTL labelOn="On" labelOff="Off"/>
+                <br/>
+                <br/>
+                <CheckboxWithLabelEnzyme labelOn="On" labelOff="Off"/>
             </Container>
         </div>
     );
